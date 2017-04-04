@@ -17,24 +17,35 @@ import java.util.Map;
  */
 public class Buscas {
     
-    public void buscaEmProfundidade(Grafo g,Vertice Inicial){
+    public void buscaEmProfundidade(Grafo g){
         
     }
-    public void buscaEmLargura(Grafo g){
-        
+    
+    public Map.Entry<Vertice, ArrayList<Aresta>> buscaEmLargura(Grafo g,Vertice v){
+       
        for (Map.Entry<Vertice, ArrayList<Aresta>> entry : g.getGrafo().entrySet()) {
+     
+           if(this.comparaDoisVertices(entry.getKey(), v)){
+               return entry;
+           }
            
            entry.getKey().setCor("CINZA");  
            
            for (int i = 0 ; i  < entry.getValue().size() ; i++){  
-               Map.Entry<Vertice,ArrayList<Aresta>> e  = g.getVerticeDoGrafo(entry.getValue().get(i).getVerticeAdjacente());
-                e.getKey().setCor("CINZA");  
+               Map.Entry<Vertice,ArrayList<Aresta>> e  = g.getVerticeDoGrafo(entry.getValue().get(i).getVerticeAdjacente()); 
+               e.getKey().setCor("CINZA");
+                 if(this.comparaDoisVertices(entry.getKey(), v)){
+                      return e;
+                }
                
            }
              entry.getKey().setCor("PRETA");
-           
-         
+  
       }
+       return null;
         
+    }
+    public boolean comparaDoisVertices(Vertice a, Vertice b){
+        return a.getId() == b.getId();
     }
 }

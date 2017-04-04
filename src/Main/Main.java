@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package teoriadosgrafos;
+package Main;
 
 import Implementacoes.Buscas;
 import Modelos.Aresta;
@@ -14,12 +14,13 @@ import static java.lang.System.err;
 import java.util.ArrayList;
 import java.util.Map;
 import static jdk.nashorn.internal.runtime.Context.err;
+import static jdk.nashorn.internal.runtime.Context.err;
 
 /**
  * 
  * @author a1380303
  */
-public class TeoriaDosGrafos {
+public class Main {
 
     /**
      * @param args the command line arguments
@@ -31,7 +32,8 @@ public class TeoriaDosGrafos {
         
         Buscas b = new Buscas();
         
-        b.buscaEmLargura(grafo);
+        Map.Entry<Vertice, ArrayList<Aresta>> entry =  b.buscaEmLargura(grafo,new Vertice(2));
+       
        
    
        
