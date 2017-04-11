@@ -9,12 +9,9 @@ import Implementacoes.Buscas;
 import Modelos.Aresta;
 import Modelos.Grafo;
 import Modelos.Vertice;
-import static java.io.FileDescriptor.err;
-import static java.lang.System.err;
 import java.util.ArrayList;
 import java.util.Map;
-import static jdk.nashorn.internal.runtime.Context.err;
-import static jdk.nashorn.internal.runtime.Context.err;
+
 
 /**
  * 
@@ -31,9 +28,10 @@ public class Main {
         grafo.iniciaGrafo();
         
         Buscas b = new Buscas();
-        
+        b.buscaEmLargura(grafo, new Vertice(0));
+        Map.Entry<Vertice, ArrayList<Aresta>> resultadoProfundidade = b.buscaEmProfundidade(grafo, new Vertice(2));
         Map.Entry<Vertice, ArrayList<Aresta>> entry =  b.buscaEmLargura(grafo,new Vertice(2));
-       
+        System.out.println(resultadoProfundidade.getKey().getTempoDeDescoberta());
        
    
        

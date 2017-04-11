@@ -9,6 +9,7 @@ import Modelos.Aresta;
 import Modelos.Grafo;
 import Modelos.Vertice;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Map;
 
 /**
@@ -17,8 +18,15 @@ import java.util.Map;
  */
 public class Buscas {
     
-    public void buscaEmProfundidade(Grafo g){
+    public Map.Entry<Vertice, ArrayList<Aresta>> buscaEmProfundidade(Grafo g,Vertice v){
         
+        for (Map.Entry<Vertice, ArrayList<Aresta>> entry : g.getGrafo().entrySet()) {
+            entry.getKey().setTempoDeDescoberta(new Date());
+            return entry ;
+           
+  
+      }
+       return null;
     }
     
     public Map.Entry<Vertice, ArrayList<Aresta>> buscaEmLargura(Grafo g,Vertice v){

@@ -1,9 +1,29 @@
 package Modelos;
 
+import java.util.Date;
+
 
 public  class Vertice {
      int id ;
      String cor;
+     Date tempoDeDescoberta;
+     Date tempoDeTermino;
+
+    public Date getTempoDeDescoberta() {
+        return tempoDeDescoberta;
+    }
+
+    public void setTempoDeDescoberta(Date tempoDeDescoberta) {
+        this.tempoDeDescoberta = tempoDeDescoberta;
+    }
+
+    public Date getTempoDeTermino() {
+        return tempoDeTermino;
+    }
+
+    public void setTempoDeTermino(Date tempoDeTermino) {
+        this.tempoDeTermino = tempoDeTermino;
+    }
      
     public Vertice(int id) {
         this.id = id;
